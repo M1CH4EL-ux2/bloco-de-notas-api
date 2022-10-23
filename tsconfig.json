@@ -8,6 +8,7 @@
     "build"
   ],
   "compilerOptions": {
+    "experimentalDecorators": true,
     "outDir": "build",
     "rootDir": "./",
     "sourceMap": true,
@@ -31,5 +32,6 @@
       "@japa/preset-adonis/build/adonis-typings",
       "@adonisjs/lucid"
     ]
+    
   }
 }

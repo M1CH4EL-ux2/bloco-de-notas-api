@@ -11,6 +11,9 @@ export default class Nota extends BaseModel {
   @column()
   public text: string
 
+  @column()
+  public userId: number
+
   @column.dateTime({ autoCreate: true })
   public createdAt: DateTime
 

@@ -6,13 +6,16 @@ export default class NotasController {
     return Nota.all()
   }
 
-  public async store({ request }: HttpContextContract) {
+  public async store({ request, params }: HttpContextContract) {
     const data = await request.body()
-    const { title, text } = data
+    const userID = params.userId
+    data.userId = Number(userID)
+    
+    const { title, text, userId } = data
 
-    Nota.create({ title, text })
+    Nota.create({ title, text, userId })
       .then(() => {
-        return { title, text }
+        return { title, text, userId }
       })
       .catch((err) => {
         console.log(`Erro ao adicionar a nota: ${err}`)

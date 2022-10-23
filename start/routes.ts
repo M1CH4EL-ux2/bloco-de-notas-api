@@ -20,5 +20,9 @@
 
 import Route from '@ioc:Adonis/Core/Route'
 import NotasController from 'App/Controllers/Http/NotasController'
+import UsersController from 'App/Controllers/Http/UsersController'
 
-Route.resource('notas', 'NotasController').apiOnly()
+Route.resource('user', 'UsersController').apiOnly()
+Route.resource('user/:userId/notas', 'NotasController').apiOnly()
+// Route.post('user/:userId/notas', 'NotasController.store')
+
